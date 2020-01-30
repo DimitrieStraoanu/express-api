@@ -13,8 +13,8 @@ mongoose.connection.once('open', () => console.log('Database connected'));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(express.static('./public'));
 
-app.get('/',(req,res)=>res.send(`It works!`));
 
 //routes
 const postsRoute = require('./routes/posts_route');
