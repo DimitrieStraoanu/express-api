@@ -13,7 +13,6 @@ mongoose.connection.once('open', () => console.log('Database connected'));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static('./public'));
 
 
 //routes
@@ -21,5 +20,5 @@ const postsRoute = require('./routes/posts_route');
 app.use('/posts',postsRoute);
 
 //start server
-const port = process.env.PORT || 8000
+const port = process.env.PORT
 app.listen(port, () => console.log(`Server started on port: ${port}`));
